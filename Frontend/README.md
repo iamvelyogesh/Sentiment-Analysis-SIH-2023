@@ -1,6 +1,4 @@
-# React JS Landing Page Template
-
-**
+# SIH 2023 SENTIMENT ANALYSIS
 
 # 🛎️🛎️ Good news! New & improved [V2](https://github.com/issaafalkattan/react-landing-page-template-2021) is out  
 
