@@ -75,11 +75,55 @@ Sentiment analysis involves processing and analyzing text data to determine the 
     plt.show()
     ```
 
-## Case Study
+# Case Study: Cyberbullying and Sentiment Analysis
 
-### Example: Analyzing Customer Reviews
+## Tragic Incident
 
-The sentiment analysis system analyzes customer reviews for a product, identifying overall sentiment, spotting trends, and providing insights to improve the product.
+Priyanshu Yadav, a 16-year-old student from Ujjain, Madhya Pradesh, tragically took his own life due to relentless cyberbullying. Priyanshu, a class 10 student, faced derogatory comments and homophobic slurs after expressing his queer identity through cross-dressing. This heartbreaking event underscores the severe impact of cyberbullying and highlights the urgent need for effective measures to address online harassment.
+
+## Relevance to Sentiment Analysis
+
+### Understanding the Issue
+
+Social media sentiment analysis can play a crucial role in understanding and mitigating issues related to cyberbullying and harassment. By analyzing online conversations and comments, sentiment analysis tools can help identify harmful content and patterns of abuse.
+
+1. **Monitoring Online Sentiment**:
+   Sentiment analysis can be used to monitor social media platforms for negative or harmful sentiments directed towards individuals. For example, comments on sensitive posts can be analyzed to detect instances of cyberbullying.
+
+   ```python
+   from textblob import TextBlob
+
+   def analyze_sentiment(text):
+       analysis = TextBlob(text)
+       if analysis.sentiment.polarity < 0:
+           return 'Negative'
+       elif analysis.sentiment.polarity == 0:
+           return 'Neutral'
+       else:
+           return 'Positive'
+
+   comment = "Your cross-dressing is disgusting!"
+   print(analyze_sentiment(comment))  # Output: Negative
+   ```python
+2. **Identifying Patterns**:
+   Aggregating sentiment data helps reveal patterns of abuse and target specific areas or individuals for intervention. This can aid in designing better support systems and preventive measures.
+   ```python
+   import pandas as pd
+
+   # Sample data
+   data = {'comment': ["Your cross-dressing is disgusting!", "You look great today!", "Stop being yourself."],
+           'sentiment': [analyze_sentiment("Your cross-dressing is disgusting!"),
+                         analyze_sentiment("You look great today!"),
+                         analyze_sentiment("Stop being yourself.")]}
+   df = pd.DataFrame(data)
+   print(df)
+   ```python
+ 3. **Promoting Positive Engagement**:
+    Positive sentiment analysis can highlight supportive interactions and encourage a more inclusive environment. By rewarding positive comments, social media platforms can foster a supportive online space.
+    ```python
+    positive_comments = df[df['sentiment'] == 'Positive']
+    print(positive_comments)
+    ```python
 
 ## Installation
 
